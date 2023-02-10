@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9vy73eF1csSj4JyXESMC+AEGu6l+CHJX/HV/QdkB5nYEiOljQ2OdrA6mJVQmKchHGeD4eZ7Z3l0ptbAZrIgJrg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cesar\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\cesar\\.nuget\\packages\\litedb\\5.0.15\\litedb.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

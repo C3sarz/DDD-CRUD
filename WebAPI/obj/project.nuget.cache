@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hb3VxaFWpzudScTFAYLIMpHT7i+IjHUwqHRZ0tKOQYHLUo5FJ9M6rWtWtZAy+aokTGgARrGosg3vZuxA3/Silw==",
+  "dgSpecHash": "Ni8joaOcs5ns7NF6jJkLvlJCSL+4Ci3sWlPsqKDF+jcDi87MEaxBiVbPyTmpjaHNbLD4BCBilYUO1QgRI5OyIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\WebAPI\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cesar\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\litedb\\5.0.15\\litedb.5.0.15.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
