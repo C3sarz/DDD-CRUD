@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "FluentValidation": "11.4.0",
           "LiteDB": "5.0.15"
         },
@@ -29,6 +30,14 @@
             "assemblyVersion": "5.0.15.0",
             "fileVersion": "5.0.15.0"
           }
+        }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.4.0"
+        },
+        "runtime": {
+          "Domain.dll": {}
         }
       }
     }
@@ -52,6 +61,11 @@
       "sha512": "sha512-nucyfCOGSATH553BxplxExP3BOqEwmHt0B57426EIaQjD3CC1Odb52VVCGgTxyYaD2oe3B/cJk8jDo6XiBJqPg==",
       "path": "litedb/5.0.15",
       "hashPath": "litedb.5.0.15.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

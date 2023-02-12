@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "aHY1UqO4iqM1nbx+YD78oxM4Cpp0Gnj/gHY5GIcCw55fCBTg2uvb3VosaG0KC5sbA/QcCTK5X1G0YJU1BXbRUA==",
-  "success": false,
+  "dgSpecHash": "OqXe1K6BBL/l1yB90fuHQ3XAyGY2eEKagF1QMiH0vTMKsSe/lpW8WfrgS8b8W5whgZqrv+vMuHHnj4NOTsF96w==",
+  "success": true,
   "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\WebAPI\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cesar\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
@@ -14,15 +14,5 @@
     "C:\\Users\\cesar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  API -> Infrastructure -> Infrastructure.",
-      "libraryId": "Infrastructure",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

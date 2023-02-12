@@ -21,16 +21,20 @@ namespace Infrastructure.Database
         }
         public void Add(Report entity) => _collection.Insert(entity);
 
-
         public void Delete(Report entity) => _collection.Delete(entity.Id);
 
         public void DeleteAll() => _collection.DeleteAll();
 
         public IEnumerable<Report> GetAll() => _collection.FindAll();
 
-        public void GetById(int id) => _collection.FindById(id);
+        public Report GetById(int id) => _collection.FindById(id);
 
         public void Update(Report entity) => _collection.Update(entity);
+
+        /// <summary>
+        /// No need to implement since LiteDB does not have a dispose method.
+        /// </summary>
+        public void Dispose() { }
     }
 
 }

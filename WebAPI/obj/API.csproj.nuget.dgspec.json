@@ -91,9 +91,6 @@
             "projectReferences": {
               "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj"
-              },
-              "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

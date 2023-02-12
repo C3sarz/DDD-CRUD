@@ -1,21 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HZFTpWm/kIWtXSsR3OXiSNyn53jexw8ZPTpyg4NwH248uEdb0C5Tx4halmP28TiKEfArRSJEkbK+yCcK4rSDrA==",
-  "success": false,
+  "dgSpecHash": "aN9ikdeN2OplI8qsFFVoYijIVdg1S4Z4toYmSIGEfQzptg6t++CdkTbSpuU5uuMYwe/Gx3ae6d9/ZjDFVGsGUA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cesar\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\cesar\\.nuget\\packages\\litedb\\5.0.15\\litedb.5.0.15.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  Infrastructure -> Infrastructure.",
-      "libraryId": "Infrastructure",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

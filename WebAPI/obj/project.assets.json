@@ -141,7 +141,6 @@
         "dependencies": {
           "Domain": "1.0.0",
           "FluentValidation": "11.4.0",
-          "Infrastructure": "1.0.0",
           "LiteDB": "5.0.15"
         },
         "compile": {
@@ -498,16 +497,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  API -> Infrastructure -> Infrastructure.",
-      "libraryId": "Infrastructure",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

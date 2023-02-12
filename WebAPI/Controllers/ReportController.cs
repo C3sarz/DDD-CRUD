@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
+using Domain.Services;
 
 namespace API.Controllers
 {
@@ -8,22 +9,18 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ReportController : ControllerBase
     {
+        private readonly IReportService _reportService;
 
-        private readonly ILogger<ReportController> _logger;
-
-        public ReportController(ILogger<ReportController> logger)
+        public ReportController(IReportService reportService)
         {
-            _logger = logger;
+            _reportService= reportService;
         }
 
         //[Route("test")]
         [HttpGet]
         public ActionResult<IEnumerable<Report>> Get()
         {
-            var result = new List<Report>
-            {
-                new Report("Name", "County")
-            };
+            var result = _reportService.GetAllReports();
             return Ok(result);
         }
     }
