@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class FireLocation : Entity
+    public class Report : Entity
     {
-        public string name { get; set; }
+        public string name { get;  set; }
         public string county { get; set; }
 
-        private List<FireReport> _fireReports;
+        public List<ReportItem> reportList { get; private set; }
 
-        public FireLocation(string name, string county)
+        public Report(string name, string county)
         {
             this.name = name;
             this.county = county;
-            _fireReports = new List<FireReport>();
+            reportList = new List<ReportItem>();
         }
 
         public void AddFireReport(DateTime date, DateTime start, DateTime end, int hectares)
         {
             //TODO: Business rules
 
-            FireReport fireReport = new FireReport(date, start, end, hectares);
-            _fireReports.Add(fireReport);
+            ReportItem report = new ReportItem(date, start, end, hectares);
+            reportList.Add(report);
         }
 
     }

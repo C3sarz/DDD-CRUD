@@ -1,3 +1,5 @@
+using LiteDB;
+
 namespace API
 {
     public class Program
@@ -9,6 +11,11 @@ namespace API
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            //DB Context
+            var db = new LiteDatabase(@".\database.db");
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             //builder.Services.AddEndpointsApiExplorer();
             //builder.Services.AddSwaggerGen();

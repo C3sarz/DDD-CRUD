@@ -27,6 +27,19 @@
             "related": ".xml"
           }
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.4.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -73,11 +86,18 @@
         "litedb.5.0.15.nupkg.sha512",
         "litedb.nuspec"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Domain >= 1.0.0",
       "FluentValidation >= 11.4.0",
+      "Infrastructure >= 1.0.0",
       "LiteDB >= 5.0.15"
     ]
   },
@@ -107,7 +127,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -148,5 +175,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1108",
+      "level": "Error",
+      "message": "Cycle detected. \r\n  Infrastructure -> Infrastructure.",
+      "libraryId": "Infrastructure",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

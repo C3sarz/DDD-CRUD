@@ -5,9 +5,12 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API.csproj", "{CC72AEA1-97FB-4223-B7ED-098D7EE779F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{DFE3D9E5-A4A5-4D97-BD79-E06D193F70F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.csproj", "{DFE3D9E5-A4A5-4D97-BD79-E06D193F70F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{67D76806-5DB0-4B40-B5C8-BF0FD7C1CFA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{67D76806-5DB0-4B40-B5C8-BF0FD7C1CFA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DFE3D9E5-A4A5-4D97-BD79-E06D193F70F8} = {DFE3D9E5-A4A5-4D97-BD79-E06D193F70F8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

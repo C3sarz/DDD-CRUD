@@ -2,7 +2,7 @@
 
 namespace Domain.Services
 {
-    public interface IFireReportRepository : IRepository<FireReport>
+    public interface IReportRepository : IRepository<Report>
     {
     }
 }

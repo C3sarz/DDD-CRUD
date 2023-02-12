@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
-    <Folder Include="Validation\" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

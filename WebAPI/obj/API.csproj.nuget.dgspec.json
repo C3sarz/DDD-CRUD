@@ -88,7 +88,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
