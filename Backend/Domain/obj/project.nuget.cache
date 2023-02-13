@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LK6+ZozW6bKGbdwm5Pgyg+L9MsnkJLhQgtrjBGjoHfUKjILFReYkQyLJHDwI9OZlzEqVYPY6HKXiPcWMWklQcg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cesar\\Documents\\GitHub\\CRUD-Dev\\Backend\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cesar\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
