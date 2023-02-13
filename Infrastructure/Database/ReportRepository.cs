@@ -21,7 +21,7 @@ namespace Infrastructure.Database
         }
         public void Add(Report entity) => _collection.Insert(entity);
 
-        public void Delete(Report entity) => _collection.Delete(entity.Id);
+        public void Delete(int id) => _collection.Delete(id);
 
         public void DeleteAll() => _collection.DeleteAll();
 

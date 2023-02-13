@@ -12,8 +12,8 @@ namespace Domain.Services
 
         public void CreateReport(Report report);
         public void UpdateReport(Report report);
-        public void DeleteReport(Report report);
-        public Report GetReport(int Id);
+        public void DeleteReport(int id);
+        public Report GetReport(int id);
         public IEnumerable<Report> GetAllReports();
 
 

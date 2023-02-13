@@ -11,7 +11,7 @@ namespace API.Services
         public void CreateReport(Report report) => _repository.Add(report);
         
 
-        public void DeleteReport(Report report) => _repository.Delete(report);
+        public void DeleteReport(int id) => _repository.Delete(id);
 
         public IEnumerable<Report> GetAllReports() => _repository.GetAll();
 

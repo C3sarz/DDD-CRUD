@@ -3,6 +3,7 @@ using LiteDB;
 using API.Services;
 using Infrastructure.Database;
 using Domain.Entities;
+using System.Security.Cryptography;
 
 namespace API
 {
@@ -16,15 +17,16 @@ namespace API
             var db = new LiteDatabase(@".\database.db");
             IRepository<Report> repository = new ReportRepository(db);
             repository.DeleteAll();
-            repository.Add(new Report("cesar", "asu"));
+            for (int i = 0; i < 5; i++)
+            {
+                repository.Add(new Report("cesar", RandomNumberGenerator.GetInt32(3000).ToString()));
+            }
             builder.Services.AddScoped<IReportService, ReportService>(f => new ReportService(repository));
 
 
 
             // Add services to the container.
             builder.Services.AddControllers();
-
-
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             //builder.Services.AddEndpointsApiExplorer();
