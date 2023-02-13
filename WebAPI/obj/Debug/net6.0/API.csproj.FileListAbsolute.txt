@@ -5,10 +5,16 @@ C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\API.deps.json
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\API.runtimeconfig.json
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\API.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\API.pdb
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\LiteDB.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Domain.dll
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Domain.pdb
+C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\API.csproj.AssemblyReference.cache
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\API.AssemblyInfoInputs.cache
@@ -30,9 +36,3 @@ C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\refint\API.dll
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\API.pdb
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\obj\Debug\net6.0\ref\API.dll
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\FluentValidation.dll
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\LiteDB.dll
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Domain.dll
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Infrastructure.dll
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Domain.pdb
-C:\Users\cesar\Documents\GitHub\CRUD-Dev\WebAPI\bin\Debug\net6.0\Infrastructure.pdb
