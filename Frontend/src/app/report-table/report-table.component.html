@@ -22,6 +22,12 @@
       <th mat-header-cell *matHeaderCellDef>County</th>
       <td mat-cell *matCellDef="let element">{{element.county}}</td>
     </ng-container>
+
+    <!-- Report amount Column -->
+    <ng-container matColumnDef="reports">
+      <th mat-header-cell *matHeaderCellDef>Reports</th>
+      <td mat-cell *matCellDef="let element">{{element.reportList.length}}</td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr
