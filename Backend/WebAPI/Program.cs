@@ -32,10 +32,24 @@ namespace API
             //builder.Services.AddEndpointsApiExplorer();
             //builder.Services.AddSwaggerGen();
 
+            // Since angular runs on another port...
+            builder.Services.AddCors(options =>
+            {
+
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+
             var app = builder.Build();
 
             app.UseAuthorization();
             app.MapControllers();
+            app.UseCors();
 
             app.Run();
         }
