@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Report } from 'src/app/reports/report'
+import { MatDialog } from '@angular/material/dialog';
+import { ReportAggregate } from 'src/app/reports/report'
 import { ReportService } from 'src/app/reports/report.service'
+import { ReportPopupComponent } from '../report-popup/report-popup.component';
 
-
-
-
-const ELEMENT_DATA: Report[] = [
-  {position: 1, name: 'Hydrogen', id: 1.0079, county: 'H',reportList:[]},
-  {position: 2, name: 'Helium', id: 4.0026, county: 'He',reportList:[]},
-  {position: 3, name: 'Lithium', id: 6.941, county: 'Li',reportList:[]},
-];
 
 @Component({
   selector: 'app-report-table',
@@ -19,26 +13,36 @@ const ELEMENT_DATA: Report[] = [
 })
 
 export class ReportTableComponent implements OnInit {
-  dataSource: Report[] = [];
+  dataSource: ReportAggregate[] = [];
   displayedColumns: string[] = ['id', 'name', 'county', 'reports'];
-  clickedRows = new Set<Report>();
+  clickedRows = new Set<ReportAggregate>();
 
-  constructor(private reportService: ReportService){}
+  constructor(private reportService: ReportService, public dialog: MatDialog) { }
 
 
-  getReports(): void{
-  this.reportService.getReports().subscribe(dataSource => 
-    {
-
+  getReports(): void {
+    this.reportService.getReports().subscribe(dataSource => {
       dataSource.forEach(element => {
-        
-  console.log("DATA: "+ element.id+ ', '+ element.county);
+
+        console.log("DATA: " + element.id + ', ' + element.county);
       });
 
-    this.dataSource = dataSource
-  });
-  
+      this.dataSource = dataSource
+    });
   }
+
+  openDialog(row:ReportAggregate): void {
+    const dialogRef = this.dialog.open(ReportPopupComponent, {
+      data: row,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed: '+result);
+      // this.value = result;
+    });
+  }
+
+
 
   ngOnInit(): void {
     this.getReports();

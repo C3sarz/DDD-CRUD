@@ -35,9 +35,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr
         mat-row
-        (click)="clickedRows.add(row)"
-        [class.demo-row-is-clicked]="clickedRows.has(row)"
         *matRowDef="let row; columns: displayedColumns;"
+        (click)="openDialog(row)"
+        [class.demo-row-is-clicked]="clickedRows.has(row)"
     ></tr>
   </table>
   

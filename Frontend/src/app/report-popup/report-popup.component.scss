@@ -1,0 +1,20 @@
+.window{
+    width: auto;
+    height: auto;
+    border-radius: 8px, !important;
+}
+
+.action-button {
+    padding-bottom: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }

@@ -1,6 +1,5 @@
-export interface Report {
+export interface ReportAggregate {
 	name: string;
-	position: number;
 	county: string;
 	id: number;
 	reportList: ReportItem[]

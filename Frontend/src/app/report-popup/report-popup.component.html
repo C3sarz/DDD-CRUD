@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Viewing details of {{reportAggregate.name}}</h1>
+<div mat-dialog-content class="window">
+  <div class="row">
+    <div class="column">
+
+      <p>Name: </p>
+      <p>County: </p>
+      
+    </div>
+    <div class="column">
+      <!-- <mat-form-field>
+        <input matInput type="text" [(ngModel)]="reportAggregate.county">
+      </mat-form-field> -->
+      <mat-card [contentEditable]="false">
+        <mat-card-content>{{reportAggregate.name}}</mat-card-content>
+      </mat-card>
+      <mat-card [contentEditable]="false">
+        <mat-card-content>{{reportAggregate.county}}</mat-card-content>
+      </mat-card>
+
+    </div>
+
+  </div>
+</div>
+<div mat-dialog-actions align="end" class="action-button">
+
+  <button mat-fab color="warn" aria-label="Delete" [mat-dialog-close]="onDeleteClicked">
+    <mat-icon fontIcon="delete"></mat-icon>
+  </button>
+  <button mat-fab color="primary" aria-label="Edit" [mat-dialog-close]="onEditClicked">
+    <mat-icon fontIcon="create"></mat-icon>
+  </button>
+</div>
