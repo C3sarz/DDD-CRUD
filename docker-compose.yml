@@ -7,3 +7,9 @@ services:
           dockerfile: Dockerfile
         ports:
           - "5000:80"
+    frontend:
+        build:
+          context: ./Frontend
+          dockerfile: Dockerfile
+        ports:
+          - "4200:4200"

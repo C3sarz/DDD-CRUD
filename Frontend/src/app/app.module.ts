@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ReportTableComponent } from './report-table/report-table.component';
+import { EditReportComponent } from './edit-report/edit-report.component';
+import { ViewReportComponent } from './view-report/view-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ReportTableComponent
+    ReportTableComponent,
+    EditReportComponent,
+    ViewReportComponent
   ],
   imports: [
     BrowserModule,
