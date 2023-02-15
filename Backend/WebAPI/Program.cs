@@ -36,20 +36,20 @@ namespace API
             builder.Services.AddCors(options =>
             {
 
-                options.AddDefaultPolicy(
-                    policy =>
-                    {
-                        policy.AllowAnyOrigin()
-                            .AllowAnyHeader()
-                            .AllowAnyMethod();
-                    });
-            });
+                options.AddPolicy("Origins",
+    policy =>
+    {
+        policy.WithOrigins("http://localhost:4200") // note the port is included 
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
             var app = builder.Build();
+            app.UseCors("Origins");
 
             app.UseAuthorization();
             app.MapControllers();
-            app.UseCors();
 
             app.Run();
         }

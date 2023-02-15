@@ -8,7 +8,7 @@ import {Report} from 'src/app/reports/report';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':'application/json',
-    'ngsw-bypass': 'true',
+    'Host' : 'http://localhost:4200',
   })
 };
 
@@ -25,7 +25,6 @@ export class ReportService {
     // this.handleError = httpErrorHandler.createHandleError('HeroesService');
   }
 
-    /** GET heroes from the server */
     getReports(): Observable<Report[]> {
       return this.http.get<Report[]>(this.endpoint ,httpOptions);
     }

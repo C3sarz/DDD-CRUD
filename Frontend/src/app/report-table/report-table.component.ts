@@ -19,16 +19,24 @@ const ELEMENT_DATA: Report[] = [
 })
 
 export class ReportTableComponent implements OnInit {
-  dataSource: Report[] = ELEMENT_DATA;
-  displayedColumns: string[] = ['position', 'name', 'county', 'id', 'reports'];
+  dataSource: Report[] = [];
+  displayedColumns: string[] = ['id', 'name', 'county', 'reports'];
   clickedRows = new Set<Report>();
 
   constructor(private reportService: ReportService){}
 
 
   getReports(): void{
-  this.reportService.getReports().subscribe(dataSource => this.dataSource = dataSource);
-  console.log(this.dataSource.toString());
+  this.reportService.getReports().subscribe(dataSource => 
+    {
+
+      dataSource.forEach(element => {
+        
+  console.log("DATA: "+ element.id+ ', '+ element.county);
+      });
+
+    this.dataSource = dataSource
+  });
   
   }
 
