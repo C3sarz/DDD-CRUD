@@ -1,22 +1,38 @@
 ﻿using Domain.Entities;
 using Domain.Services;
+using FluentValidation;
+using Infrastructure.Validators;
+using System.ComponentModel.DataAnnotations;
 
 namespace API.Services
 {
     public class ReportService : IReportService
     {
-        private IRepository<Report> _repository;
+        private IRepository<ReportAggregate> _repository;
 
-        public ReportService(IRepository<Report> repository) { _repository = repository; }
-        public void CreateReport(Report report) => _repository.Add(report);
-        
+        private ReportAggregateValidator _validator;
+
+        public ReportService(IRepository<ReportAggregate> repository)
+        {
+            _repository = repository;
+            _validator = new ReportAggregateValidator();
+        }
+        public void CreateReport(ReportAggregate report)
+        {
+            _validator.ValidateAndThrow(report);
+            _repository.Add(report);
+        }
 
         public void DeleteReport(int id) => _repository.Delete(id);
 
-        public IEnumerable<Report> GetAllReports() => _repository.GetAll();
+        public IEnumerable<ReportAggregate> GetAllReports() => _repository.GetAll();
 
-        public Report GetReport(int Id) => _repository.GetById(Id);
+        public ReportAggregate GetReport(int Id) => _repository.GetById(Id);
 
-        public void UpdateReport(Report report) => _repository.Update(report);
+        public void UpdateReport(ReportAggregate report)
+        {
+            _validator.ValidateAndThrow(report);
+            _repository.Update(report);
+        }
     }
 }

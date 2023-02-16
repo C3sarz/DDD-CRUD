@@ -6,10 +6,10 @@
     /// <typeparam name="Entity"></typeparam>
     public interface IRepository<TEntity> : IDisposable where TEntity : Domain.Entity
     {
-        public void Add(TEntity entity);
-        public void Update(TEntity entity);
-        public void Delete(int id);
-        public void DeleteAll();
+        public int Add(TEntity entity);
+        public bool Update(TEntity entity);
+        public bool Delete(int id);
+        public bool DeleteAll();
         public TEntity GetById(int id);
         public IEnumerable<TEntity> GetAll();
 

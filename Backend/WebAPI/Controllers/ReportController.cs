@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Domain.Services;
+using FluentValidation;
 
 namespace API.Controllers
 {
@@ -13,43 +14,87 @@ namespace API.Controllers
 
         public ReportController(IReportService reportService)
         {
-            _reportService= reportService;
+            _reportService = reportService;
         }
 
         [HttpGet(Name = "GetAll")]
-        public ActionResult<IEnumerable<Report>> Get()
+        public ActionResult<IEnumerable<ReportAggregate>> Get()
         {
-            var result = _reportService.GetAllReports();
-            return Ok(result);
+            try
+            {
+                var result = _reportService.GetAllReports();
+                return Ok(result);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Report> Get(int id)
+        public ActionResult<ReportAggregate> Get(int id)
         {
-            var result = _reportService.GetReport(id);
-            if (result == null) { return NotFound(); }
-            return Ok(result);
+            try
+            {
+                var result = _reportService.GetReport(id);
+                if (result == null) { return NotFound(); }
+                return Ok(result);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Report report)
+        public ActionResult Post([FromBody] ReportAggregate report)
         {
-            _reportService.CreateReport(report);
-            return StatusCode(StatusCodes.Status201Created);
+            try
+            {
+                _reportService.CreateReport(report);
+                return StatusCode(StatusCodes.Status201Created);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Errors);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpPut]
-        public ActionResult Put([FromBody] Report report)
+        public ActionResult Put([FromBody] ReportAggregate report)
         {
-            _reportService.UpdateReport(report);
-            return StatusCode(StatusCodes.Status200OK);
+            try
+            {
+                _reportService.UpdateReport(report);
+                return StatusCode(StatusCodes.Status200OK);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Errors);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-           _reportService.DeleteReport(id);
-            return StatusCode(StatusCodes.Status200OK);
+            try
+            {
+                _reportService.DeleteReport(id);
+                return StatusCode(StatusCodes.Status200OK);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
     }
 }

@@ -9,27 +9,27 @@ using System.Text;
 
 namespace Infrastructure.Database
 {
-    public class ReportRepository : IRepository<Report>
+    public class ReportRepository : IRepository<ReportAggregate>
     {
         private LiteDatabase _database;
-        private ILiteCollection<Report> _collection;
+        private ILiteCollection<ReportAggregate> _collection;
 
         public ReportRepository(LiteDatabase database)
         {
             _database = database;
-            _collection = _database.GetCollection<Report>("Reports");
+            _collection = _database.GetCollection<ReportAggregate>("Reports");
         }
-        public void Add(Report entity) => _collection.Insert(entity);
+        public int Add(ReportAggregate entity) => _collection.Insert(entity);
 
-        public void Delete(int id) => _collection.Delete(id);
+        public bool Delete(int id) => _collection.Delete(id);
 
-        public void DeleteAll() => _collection.DeleteAll();
+        public bool DeleteAll() => _collection.DeleteAll() > 0;
 
-        public IEnumerable<Report> GetAll() => _collection.FindAll();
+        public IEnumerable<ReportAggregate> GetAll() => _collection.FindAll();
 
-        public Report GetById(int id) => _collection.FindById(id);
+        public ReportAggregate GetById(int id) => _collection.FindById(id);
 
-        public void Update(Report entity) => _collection.Update(entity);
+        public bool Update(ReportAggregate entity) => _collection.Update(entity);
 
         /// <summary>
         /// No need to implement since LiteDB does not have a dispose method.

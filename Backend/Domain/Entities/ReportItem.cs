@@ -8,16 +8,19 @@ namespace Domain.Entities
 {
     public class ReportItem : Entity
     {
-        public DateTime fireStartDate { get; private set; }
-        public DateTime fireEndDate { get; private set; }
-        public DateTime reportDate { get; private set; }
-        public int hectares { get; private set; }
+        public string fireStartDate { get;  set; }
+        public string fireEndDate { get;  set; }
+        public string reportDate { get;  set; }
 
-        public ReportItem(DateTime reportDate, DateTime start, DateTime end, int hectares)
+        public int fireIndex { get;  set; }
+        public int hectares { get;  set; }
+
+        public ReportItem(string reportDate, string start, string end, int fireIndex, int hectares)
         {
             this.hectares = hectares;
+            this.fireIndex= fireIndex;
             this.reportDate = reportDate;
-            fireStartDate = start;
+            this.fireStartDate = start;
             fireEndDate = end;
         }
 

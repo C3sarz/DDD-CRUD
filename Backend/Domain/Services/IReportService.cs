@@ -10,11 +10,11 @@ namespace Domain.Services
     public interface IReportService
     {
 
-        public void CreateReport(Report report);
-        public void UpdateReport(Report report);
+        public void CreateReport(ReportAggregate report);
+        public void UpdateReport(ReportAggregate report);
         public void DeleteReport(int id);
-        public Report GetReport(int id);
-        public IEnumerable<Report> GetAllReports();
+        public ReportAggregate GetReport(int id);
+        public IEnumerable<ReportAggregate> GetAllReports();
 
 
     }
