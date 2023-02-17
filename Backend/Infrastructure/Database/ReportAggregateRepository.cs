@@ -2,19 +2,18 @@
 using Domain.Entities;
 using Domain.Services;
 using LiteDB;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Infrastructure.Database
 {
-    public class ReportRepository : IRepository<ReportAggregate>
+    /// <summary>
+    /// Handles database operations using LiteDB (NoSQL)
+    /// </summary>
+    public class ReportAggregateRepository : IRepository<ReportAggregate>
     {
         private LiteDatabase _database;
         private ILiteCollection<ReportAggregate> _collection;
 
-        public ReportRepository(LiteDatabase database)
+        public ReportAggregateRepository(LiteDatabase database)
         {
             _database = database;
             _collection = _database.GetCollection<ReportAggregate>("Reports");

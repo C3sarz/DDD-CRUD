@@ -3,13 +3,15 @@ using FluentValidation;
 
 namespace Infrastructure.Validators
 {
+    /// <summary>
+    /// Validates properties of a ReportAggregate object.
+    /// </summary>
     public class ReportAggregateValidator : AbstractValidator<ReportAggregate>
     {
         public ReportAggregateValidator()
         {
             RuleFor(x => x.Id)
-                .NotNull()
-                .NotEqual(0);
+                .NotNull();
 
             RuleFor(x => x.name)
                 .NotNull()
@@ -20,9 +22,11 @@ namespace Infrastructure.Validators
                 .Length(0, 20);
 
             RuleFor(x => x.maxFireIndex)
+                .NotNull()
                 .InclusiveBetween(0, 30);
 
             RuleFor(x => x.avgFireIndex)
+                .NotNull()
                 .InclusiveBetween(0, 30);
 
             RuleForEach(x => x.reportList)

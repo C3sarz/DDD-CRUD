@@ -13,56 +13,89 @@ namespace API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //DB Context
-            var db = new LiteDatabase(@".\database.db");
-            IRepository<ReportAggregate> repository = new ReportRepository(db);
+            //DB Setup Context
+            var db = new LiteDatabase(@"TestDatabase.db");
+            IRepository<ReportAggregate> repository = new ReportAggregateRepository(db);
 
             // Seeding for testing
-            repository.DeleteAll();
             if (repository.GetAll().Any() == false)
             {
-                for (int i = 0; i < 5; i++)
-                {
-                    int fireIndex = RandomNumberGenerator.GetInt32(30);
-                    repository.Add(
-                        new ReportAggregate(
-                            "cesar",
-                        RandomNumberGenerator.GetInt32(3000).ToString(),
-                        fireIndex,
-                        fireIndex+ RandomNumberGenerator.GetInt32(6)
-                        ));
-                }
+                populateDatabase(repository);
             }
 
+            // Add ReportAggregate service to scope.
             builder.Services.AddScoped<IReportService, ReportService>(f => new ReportService(repository));
-
 
             // Add services to the container.
             builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            // Swagger disabled
             //builder.Services.AddEndpointsApiExplorer();
             //builder.Services.AddSwaggerGen();
 
-            // Since angular runs on another port...
+            // Configure CORS to interact with Frontend.
             builder.Services.AddCors(options =>
             {
-
                 options.AddPolicy("Origins", policy =>
-        {
-        policy.WithOrigins("http://localhost:4200")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
+                {
+                    policy
+                    .WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
             });
 
             var app = builder.Build();
             app.UseCors("Origins");
-
             app.UseAuthorization();
             app.MapControllers();
-
             app.Run();
         }
+
+        private static void populateDatabase(IRepository<ReportAggregate> repository)
+        {
+
+            int avgIndex = RandomNumberGenerator.GetInt32(20);
+            repository.Add(
+                new ReportAggregate(
+                    "Cesar's Farm",
+                    "Johnson County",
+                    avgIndex,
+                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    new List<ReportItem>()
+                ));
+
+            avgIndex = RandomNumberGenerator.GetInt32(20);
+            repository.Add(
+                new ReportAggregate(
+                    "Green Forest",
+                    "Morris County",
+                    avgIndex,
+                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    new List<ReportItem>()
+                ));
+
+            avgIndex = RandomNumberGenerator.GetInt32(20);
+            repository.Add(
+                new ReportAggregate(
+                    "Lawrence",
+                    "Leavenworth County",
+                    avgIndex,
+                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    new List<ReportItem>()
+                ));
+
+            avgIndex = RandomNumberGenerator.GetInt32(20);
+            repository.Add(
+                new ReportAggregate(
+                    "River Trail",
+                    "Riley County",
+                    avgIndex,
+                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    new List<ReportItem>()
+                ));
+
+        }
     }
+
 }

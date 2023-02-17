@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
+    /// <summary>
+    /// Individual reports aggregated into a recurring location (ReportAggregate).
+    /// </summary>
     public class ReportItem : Entity
     {
         public string fireStartDate { get;  set; }
@@ -15,13 +18,13 @@ namespace Domain.Entities
         public int fireIndex { get;  set; }
         public int hectares { get;  set; }
 
-        public ReportItem(string reportDate, string start, string end, int fireIndex, int hectares)
+        public ReportItem(string reportDate, string fireStartDate, string fireEndDate, int fireIndex, int hectares)
         {
             this.hectares = hectares;
             this.fireIndex= fireIndex;
             this.reportDate = reportDate;
-            this.fireStartDate = start;
-            fireEndDate = end;
+            this.fireStartDate = fireStartDate;
+            this.fireEndDate = fireEndDate;
         }
 
 

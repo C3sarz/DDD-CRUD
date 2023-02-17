@@ -2,10 +2,12 @@
 using Domain.Services;
 using FluentValidation;
 using Infrastructure.Validators;
-using System.ComponentModel.DataAnnotations;
 
 namespace API.Services
 {
+    /// <summary>
+    /// Handles validation and operations concerning Reports.
+    /// </summary>
     public class ReportService : IReportService
     {
         private IRepository<ReportAggregate> _repository;

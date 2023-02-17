@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Validators
 {
+    /// <summary>
+    /// Validates properties of a ReportItem object.
+    /// </summary>
     public class ReportItemValidator : AbstractValidator<ReportItem>
     {
         public ReportItemValidator()

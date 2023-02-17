@@ -1,7 +1,8 @@
 ﻿namespace Domain.Services
 {
     /// <summary>
-    /// CRUD interface, where the persistence operations are abstracted to the interface layer.
+    /// CRUD interface, where the persistence (DB) operations are
+    /// abstracted to the Interface layer.
     /// </summary>
     /// <typeparam name="Entity"></typeparam>
     public interface IRepository<TEntity> : IDisposable where TEntity : Domain.Entity

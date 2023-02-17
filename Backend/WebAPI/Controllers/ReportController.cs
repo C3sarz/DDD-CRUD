@@ -6,6 +6,9 @@ using FluentValidation;
 
 namespace API.Controllers
 {
+    /// <summary>
+    /// Web API that handles all relevant HTTP commands.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class ReportController : ControllerBase

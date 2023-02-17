@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backend/WebAPI/.database.db
+/Backend/WebAPI/.database-log.db
+/Backend/WebAPI/TestDatabase.db
+/Backend/WebAPI/TestDatabase-log.db
+/Backend/WebAPI/TestDatabase.db
