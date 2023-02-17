@@ -1,5 +1,6 @@
-<h1 mat-dialog-title>Viewing details of {{reportAggregate.name}}</h1>
-<div mat-dialog-content class="window">
+
+<div *ngIf="!isEditing" mat-dialog-content class="window">
+  <h1 mat-dialog-title>Viewing details of {{reportAggregate.name}}</h1>
   <div class="row">
     <div class="column">
 
@@ -8,15 +9,20 @@
       
     </div>
     <div class="column">
-      <!-- <mat-form-field>
-        <input matInput type="text" [(ngModel)]="reportAggregate.county">
-      </mat-form-field> -->
-      <mat-card [contentEditable]="false">
+      <!-- <mat-card [contentEditable]="false">
         <mat-card-content>{{reportAggregate.name}}</mat-card-content>
       </mat-card>
       <mat-card [contentEditable]="false">
         <mat-card-content>{{reportAggregate.county}}</mat-card-content>
-      </mat-card>
+      </mat-card> -->
+      <div class="report-container" *ngFor="let r of reportAggregate.reportList">
+        <mat-card>
+          <h3>{{r.hectares}}</h3>
+          <p>Some text</p>
+          <p>Some text</p>
+        </mat-card>
+      </div>
+
 
     </div>
 

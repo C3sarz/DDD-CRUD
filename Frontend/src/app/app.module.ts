@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { ReportTableComponent } from './report-table/report-table.component';
 import { EditReportComponent } from './edit-report/edit-report.component';
 import { ViewReportComponent } from './view-report/view-report.component';
@@ -22,6 +21,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ReportContainerComponent } from './report-container/report-container.component';
 
 
 
@@ -29,11 +30,11 @@ import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
     ReportTableComponent,
     EditReportComponent,
     ViewReportComponent,
     ReportPopupComponent,
+    ReportContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,7 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

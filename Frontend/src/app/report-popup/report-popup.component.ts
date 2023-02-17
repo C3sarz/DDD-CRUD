@@ -10,10 +10,11 @@ import { ReportAggregate } from '../reports/report';
 })
 export class ReportPopupComponent {
 
+  protected isEditing : boolean = false;
+
   constructor(
     public dialogRef: MatDialogRef<ReportPopupComponent>,
     @Inject(MAT_DIALOG_DATA) public reportAggregate: ReportAggregate) {
-    console.log(reportAggregate.id);
   }
 
   onDeleteClicked(): void {

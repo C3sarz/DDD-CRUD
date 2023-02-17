@@ -14,19 +14,13 @@ import { ReportPopupComponent } from '../report-popup/report-popup.component';
 
 export class ReportTableComponent implements OnInit {
   dataSource: ReportAggregate[] = [];
-  displayedColumns: string[] = ['id', 'name', 'county', 'reports'];
-  clickedRows = new Set<ReportAggregate>();
+  displayedColumns: string[] = ['id', 'name', 'county', 'avgFireIndex', 'maxFireIndex', 'reports'];
 
   constructor(private reportService: ReportService, public dialog: MatDialog) { }
 
 
   getReports(): void {
     this.reportService.getReports().subscribe(dataSource => {
-      dataSource.forEach(element => {
-
-        console.log("DATA: " + element.id + ', ' + element.county);
-      });
-
       this.dataSource = dataSource
     });
   }
@@ -38,7 +32,7 @@ export class ReportTableComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed: '+result);
-      // this.value = result;
+      this.getReports();
     });
   }
 

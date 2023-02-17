@@ -1,5 +1,26 @@
-.background-image{
-    background-size:cover; width:auto;
-    background-image:url('/assets/background-image.jpg');
-    background-position:100% 100%;  
-  }
+.modal {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/assets/background-image.jpg');
+}
+
+.table {
+  z-index: 3;
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+}
+
+.content {
+  align-items: center;
+}

@@ -8,15 +8,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
   p {
     margin: 0;
   }
@@ -26,7 +17,7 @@
   }
 
   .toolbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -47,23 +38,6 @@
     margin: 0 16px;
   }
 
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
 
   a,
   a:visited,
@@ -99,19 +73,19 @@
       src="/assets/github-mark.png" /></a>
 </div>
 
-<div class="background-image">
-
+<body class="modal">
 <div class="content" role="main">
+  <mat-card>
+    <!-- <mat-card-content><h1 class="md-display-1">Welcome to the Forest Fire Reporting Platform!</h1></mat-card-content> -->
+  </mat-card>
 
-  <app-welcome></app-welcome>
-  <app-report-table></app-report-table>
-</div>>
-
+  <app-report-table class="table"></app-report-table>
 </div>
 
   <!-- Footer -->
   <footer>
     Icons by: -<a target="_blank" href="https://icons8.com">Icons8</a>
   </footer>
+</body>
 
 <router-outlet></router-outlet>
