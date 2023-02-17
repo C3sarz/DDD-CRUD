@@ -2,7 +2,7 @@
     width: 700px;
     height: 400px;
     border-radius: 8px, !important;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .action-button {
@@ -12,19 +12,15 @@
     padding-top: 16px;
 }
 
-.row {
-    display: flex;
-  }
-  
-  .column {
-    flex: 50%;
-    
-  }
+.add-report {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
 
   .report-list {
-    overflow: scroll;
-    padding-bottom: 16px;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-top: 16px;
+    border-radius: 8px;
+    padding: 8px;
   }

@@ -12,5 +12,6 @@ export interface ReportItem {
 	fireStartDate: string;
 	fireEndDate: string;
 	reportDate: string;
+	fireIndex: number;
 	hectares: number;
 }

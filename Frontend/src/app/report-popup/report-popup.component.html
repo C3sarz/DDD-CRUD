@@ -1,32 +1,23 @@
 
 <div *ngIf="!isEditing" mat-dialog-content class="window">
-  <h1 mat-dialog-title>Viewing details of {{reportAggregate.name}}</h1>
-  <div class="row">
-    <div class="column">
+  <h1 mat-dialog-title>Viewing details of {{reportAggregate.name}} at {{reportAggregate.county}}</h1>
 
-      <p>Name: </p>
-      <p>County: </p>
-      
-    </div>
-    <div class="column">
-      <!-- <mat-card [contentEditable]="false">
-        <mat-card-content>{{reportAggregate.name}}</mat-card-content>
-      </mat-card>
-      <mat-card [contentEditable]="false">
-        <mat-card-content>{{reportAggregate.county}}</mat-card-content>
-      </mat-card> -->
+      <p>{{reportAggregate.name}} has {{reportAggregate.reportList.length}} forest fire reports.</p>
+      <p>County: {{reportAggregate.county}}</p>
+
+      <h2>Reports:</h2>
+      <h3 *ngIf="reportAggregate.reportList.length == 0">No forest fires reported on this location.</h3>
       <div class="report-container" *ngFor="let r of reportAggregate.reportList">
-        <mat-card>
-          <h3>{{r.hectares}}</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-        </mat-card>
+      <app-edit-report [reportItem]="r"></app-edit-report>
       </div>
-
-
+      <div class="add-report">
+      <button mat-fab color="basic">
+        <mat-icon fontIcon="add"></mat-icon>
+        
+      </button>
     </div>
 
-  </div>
+
 </div>
 <div mat-dialog-actions align="end" class="action-button">
 

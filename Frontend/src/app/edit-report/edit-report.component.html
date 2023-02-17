@@ -1,1 +1,33 @@
-<p>edit-report works!</p>
+<mat-card class="report-item">
+    <mat-card-title>{{reportItem.reportDate}}</mat-card-title>
+
+
+    <!-- Display only -->
+    <mat-card-content *ngIf="!isEditing">
+    <h3>{{reportItem.fireStartDate}} - {{reportItem.fireEndDate}}</h3>
+    <p>Hectares lost: {{reportItem.hectares}}</p>
+    <p>Fire index at the time: {{reportItem.fireIndex}}</p>
+    </mat-card-content>
+
+    <!-- Editing -->
+    <mat-card-content *ngIf="isEditing">
+
+
+        <!-- Hectares -->
+        <mat-form-field hintLabel="Enter the number of burned hectares." appearance="fill">
+            <mat-label>Burned hectares</mat-label>
+            <input matInput #input maxlength="10" placeholder="Ex. 15">
+            <mat-error *ngIf="false">
+                Burned hectares are <strong>required</strong>.
+              </mat-error>
+          </mat-form-field>
+
+    <p>Hectares lost: {{reportItem.hectares}}</p>
+    <p>Fire index at the time: {{reportItem.fireIndex}}</p>
+    </mat-card-content>
+<mat-card-actions align="end">
+    <button mat-button *ngIf="!isEditing" >DELETE</button>
+    <button *ngIf="!isEditing" (click)="isEditing = !isEditing" mat-button>EDIT</button>
+    <button *ngIf="isEditing" (click)="trySave()" mat-button>SAVE</button>
+  </mat-card-actions>
+  </mat-card>

@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReportContainerComponent } from './report-container/report-container.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -50,6 +51,7 @@ import { ReportContainerComponent } from './report-container/report-container.co
     MatIconModule,
     MatCardModule,
     MatDatepickerModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

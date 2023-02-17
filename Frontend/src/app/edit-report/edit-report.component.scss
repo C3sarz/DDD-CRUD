@@ -1,0 +1,20 @@
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  
+}
+p{
+font-family: Arial;
+font-size: 16px;
+}
+
+.report-item {
+    border-radius: 8px;
+    margin: 8px;
+    padding: 16px;
+    // width: max-content;
+  }

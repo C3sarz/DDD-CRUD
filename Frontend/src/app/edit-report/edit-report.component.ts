@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ReportItem } from '../reports/report';
 
 @Component({
   selector: 'app-edit-report',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class EditReportComponent {
 
+  protected isEditing: boolean = false;
+  @Input() reportItem!: ReportItem ;
+
+
+
+  trySave() {
+    this.isEditing = false;
+  }
 }
