@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Validator } from 'fluentvalidation-ts';
 import { ValidationErrors } from 'fluentvalidation-ts/dist/ValidationErrors';
-import { ReportAggregate, ReportItem } from './reports/report';
+import { ReportAggregate, ReportItem } from '../reports/report';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,11 @@ export class ValidatorsService{
 
   validateReportAggregate(report: ReportAggregate){
     var result = this.reportAggregateValidator.validate(report);
-    console.log(result);
+    return result;
+  }
+
+  validateReportItem(reportItem: ReportItem){
+    var result = new ReportItemValidator().validate(reportItem);
     return result;
   }
 }
@@ -25,6 +29,10 @@ class ReportAggregateValidator extends Validator<ReportAggregate> {
 
   constructor() {
     super();
+
+    this.ruleFor('id')
+    .notNull()
+    .withMessage('ID null, item invalid.');
 
     this.ruleFor('name')
       .notEmpty()

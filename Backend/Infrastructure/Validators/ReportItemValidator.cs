@@ -15,19 +15,14 @@ namespace Infrastructure.Validators
     {
         public ReportItemValidator()
         {
-            RuleFor(x => x.Id)
+            RuleFor(x => x.fireStartDate)
                 .NotNull();
 
-            RuleFor(x => x.fireStartDate)
-                .NotNull()
-                .Length(0, 20);
-
             RuleFor(x => x.fireEndDate)
-                .Length(0, 20);
+                .NotNull();
 
             RuleFor(x => x.reportDate)
-                .NotNull()
-                .Length(0, 20);
+                .NotNull();
 
             RuleFor(x => x.fireIndex)
                 .NotNull()

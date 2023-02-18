@@ -9,7 +9,7 @@ namespace Domain.Entities
     /// <summary>
     /// Individual reports aggregated into a recurring location (ReportAggregate).
     /// </summary>
-    public class ReportItem : Entity
+    public class ReportItem
     {
         public string fireStartDate { get;  set; }
         public string fireEndDate { get;  set; }

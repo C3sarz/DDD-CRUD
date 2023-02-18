@@ -8,7 +8,6 @@ export interface ReportAggregate {
   }
 
 export interface ReportItem {
-	id: number;
 	fireStartDate: string;
 	fireEndDate: string;
 	reportDate: string;
