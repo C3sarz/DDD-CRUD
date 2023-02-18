@@ -7,11 +7,11 @@
 
       <h2>Reports:</h2>
       <h3 *ngIf="reportAggregate.reportList.length == 0">No forest fires reported on this location.</h3>
-      <div class="report-container" *ngFor="let r of reportAggregate.reportList">
-      <app-edit-report [reportItem]="r" ></app-edit-report>
+      <div class="report-container" *ngFor="let r of reportAggregate.reportList; index as i">
+      <app-edit-report [reportItem]="r" [reportIndex]="i" [deleteCallback]="deleteReportCallback"></app-edit-report>
       </div>
       <div class="add-report">
-      <button mat-fab color="basic">
+      <button mat-fab color="basic" (click)="createNewReport()">
         <mat-icon fontIcon="add"></mat-icon>
         
       </button>
@@ -25,6 +25,6 @@
     <mat-icon fontIcon="delete"></mat-icon>
   </button>
   <button mat-fab color="primary" aria-label="Edit" [mat-dialog-close]="onEditClicked">
-    <mat-icon fontIcon="create"></mat-icon>
+    <mat-icon fontIcon="save"></mat-icon>
   </button>
 </div>

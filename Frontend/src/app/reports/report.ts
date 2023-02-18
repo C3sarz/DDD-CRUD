@@ -1,16 +1,16 @@
-export interface ReportAggregate {
-	name: string;
-	county: string;
-	avgFireIndex: number;
-	maxFireIndex: number;
-	id: number;
-	reportList: ReportItem[];
+export class ReportAggregate {
+	name: string = "";
+	county: string = "";
+	avgFireIndex: number = 0;
+	maxFireIndex: number = 0;
+	id: number = 0;
+	reportList: ReportItem[] = [];
   }
 
-export interface ReportItem {
-	fireStartDate: string;
-	fireEndDate: string;
-	reportDate: string;
-	fireIndex: number;
-	hectares: number;
+export class ReportItem {
+	fireStartDate: string = new Date().toISOString();
+	fireEndDate: string = new Date().toISOString();
+	reportDate: string = new Date().toISOString();
+	fireIndex: number = 0;
+	hectares: number = 1;
 }

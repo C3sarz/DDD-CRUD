@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import {  MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { ReportAggregate } from '../reports/report';
+import { ReportAggregate, ReportItem } from '../reports/report';
 
 
 @Component({
@@ -17,6 +17,13 @@ export class ReportPopupComponent {
     @Inject(MAT_DIALOG_DATA) public reportAggregate: ReportAggregate) {
   }
 
+  createNewReport(){
+    this.reportAggregate.reportList.push(new ReportItem())
+  }
+
+  deleteReportCallback = (index: number) => {
+    this.reportAggregate.reportList.splice(index,1);
+  }
 
   onDeleteClicked(): void {
     this.dialogRef.close();

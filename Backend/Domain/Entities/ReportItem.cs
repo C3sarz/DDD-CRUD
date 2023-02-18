@@ -26,7 +26,5 @@ namespace Domain.Entities
             this.fireStartDate = fireStartDate;
             this.fireEndDate = fireEndDate;
         }
-
-
     }
 }

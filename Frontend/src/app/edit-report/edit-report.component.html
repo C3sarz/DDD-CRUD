@@ -1,52 +1,75 @@
 <mat-card class="report-item">
-    <mat-card-title>Report from: {{getFormattedDate(reportItem.reportDate)}}</mat-card-title>
+  <mat-card-title>Report from: {{getFormattedDate(reportItem.reportDate, 'long')}}</mat-card-title>
 
 
-    <!-- Display only -->
-    <mat-card-content *ngIf="!isEditing">
-    <h3>From {{getFormattedDate(reportItem.fireStartDate)}} to {{getFormattedDate(reportItem.fireEndDate)}}</h3>
+  <!-- Display only -->
+  <mat-card-content *ngIf="!isEditing">
+    <h3>From {{getFormattedDate(reportItem.fireStartDate, undefined)}} to {{getFormattedDate(reportItem.fireEndDate,
+      undefined)}}</h3>
     <p>Hectares lost: {{reportItem.hectares}}</p>
     <p>Fire index at the time: {{reportItem.fireIndex}}</p>
-    </mat-card-content>
+  </mat-card-content>
 
-    <!-- Editing -->
-    <mat-card-content *ngIf="isEditing">
+  <!-- Editing -->
+  <mat-card-content *ngIf="isEditing">
 
-        <!-- Fire Start Date -->
+    <div class="row">
+
+      <!-- Fire Start Date -->
+      <div class="column">
         <mat-form-field appearance="fill">
-            <mat-label>Fire Start Date</mat-label>
-            <input matInput [matDatepicker]="picker"
-                   (dateInput)="addEvent('fireStartDate', $event)">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          <mat-label>Fire Start Date</mat-label>
+          <input matInput [formControl]="fireStartDateControl" [matDatepicker]="fireStartDatePicker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="fireStartDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #fireStartDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
 
-        <!-- Hectares -->
+      <!-- Hectares -->
+      <div class="column">
         <mat-form-field hintLabel="Enter the number of burned hectares." appearance="fill">
-            <mat-label>Burned hectares</mat-label>
-            <input [formControl]="hectaresFormControl" matInput #input maxlength="10" placeholder="Ex. 100" >
-            <mat-error *ngIf="validationResult.hectares != undefined">
-                Burned hectares are <strong>required</strong>.
-              </mat-error>
-          </mat-form-field>
+          <mat-label>Burned hectares</mat-label>
+          <input [formControl]="hectaresFormControl" matInput #input maxlength="10" placeholder="Ex. 100">
+          <mat-error *ngIf="validationResult.hectares != undefined">
+            Burned hectares are <strong>required</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
 
-          <!-- Fire Index -->
-        <mat-form-field hintLabel="Enter the fire index at the time of the fire." appearance="outline">
-            <mat-label>Fire Index</mat-label>
-            <input [formControl]="fireIndexFormControl" matInput #input maxlength="3" placeholder="Ex. 20" >
-            <mat-error *ngIf="validationResult.fireIndex != undefined">
-                FWI value is <strong>required</strong>.
-              </mat-error>
-          </mat-form-field>
+      <!-- Fire End Date -->
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Fire End Date</mat-label>
+          <input matInput [formControl]="fireEndDateControl" [matDatepicker]="fireEndDatePicker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="fireEndDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #fireEndDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+
+      <!-- Fire Index -->
+      <div class="column">
+        <mat-form-field hintLabel="Enter the fire index at the time of the fire." appearance="fill">
+          <mat-label>Fire Index</mat-label>
+          <input [formControl]="fireIndexFormControl" matInput #input maxlength="3" placeholder="Ex. 20">
+          <mat-error *ngIf="validationResult.fireIndex != undefined">
+            FWI value is <strong>required</strong>.
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
 
     <!-- <p>Hectares lost: {{reportItem.hectares}}</p>
     <p>Fire index at the time: {{reportItem.fireIndex}}</p> -->
-    </mat-card-content>
-<mat-card-actions align="end">
-    <button mat-button *ngIf="!isEditing" >DELETE</button>
-    <button mat-button *ngIf="isEditing" (click)="isEditing = !isEditing" >CANCEL</button>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button *ngIf="!isEditing" (click)="deleteCallback(reportIndex)">DELETE</button>
+    <button mat-button *ngIf="isEditing" (click)="isEditing = !isEditing">CANCEL</button>
     <button mat-button *ngIf="!isEditing" (click)="onStartEdit()">EDIT</button>
     <button mat-button *ngIf="isEditing" (click)="trySave()">SAVE</button>
   </mat-card-actions>
-  </mat-card>
+</mat-card>

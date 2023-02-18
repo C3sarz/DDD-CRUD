@@ -14,6 +14,8 @@ import { DatePipe } from '@angular/common';
 export class EditReportComponent {
 
   @Input() reportItem!: ReportItem;
+  @Input() reportIndex!: number;
+  @Input() deleteCallback!: (index:number) => void;
   protected isEditing: boolean = false;
   protected newReportItem!: ReportItem;
   protected validationResult!: ValidationErrors<ReportItem>;
@@ -22,25 +24,16 @@ export class EditReportComponent {
 
   fireIndexFormControl: FormControl = new FormControl();
   hectaresFormControl: FormControl = new  FormControl();
+  fireStartDateControl: FormControl = new  FormControl();
+  fireEndDateControl: FormControl = new  FormControl();
 
   constructor(
     private validatorService: ValidatorsService,
   ) { }
 
-  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    if (type == 'fireStartDate') {
-      this.newReportItem.fireStartDate = event.value?.toISOString() ?? new Date().toISOString();
-
-    }
-    else if (type == 'fireEndDate') {
-      this.newReportItem.fireEndDate = event.value?.toISOString() ?? new Date().toISOString();
-      
-    }
-  }
-
-  getFormattedDate(dateString: string): string {
+  getFormattedDate(dateString: string, format:string | undefined): string {
     try{
-    return this.pipe.transform(dateString, 'mediumDate')!;
+    return this.pipe.transform(dateString, format ?? 'mediumDate')!;
     }
     catch{
       return 'invalid date'
@@ -50,7 +43,7 @@ export class EditReportComponent {
   ngOnInit() {
     this.validationResult = this.validatorService.validateReportItem(this.reportItem);
     console.log(this.validationResult);
-  }
+  } 
 
   onStartEdit() {
 
@@ -58,17 +51,18 @@ export class EditReportComponent {
     this.newReportItem = JSON.parse(JSON.stringify(this.reportItem));
     this.fireIndexFormControl.setValue(this.newReportItem?.fireIndex);
     this.hectaresFormControl.setValue(this.newReportItem?.hectares);
+    this.fireStartDateControl.setValue(new Date(this.newReportItem.fireStartDate));
+    this.fireEndDateControl.setValue(new Date(this.newReportItem.fireEndDate));
     this.isEditing = true;
   }
 
   trySave() {
-
     // Replace with new values
     this.newReportItem = {
       fireIndex: parseInt(this.fireIndexFormControl.value),
       hectares: parseInt(this.hectaresFormControl.value),
-      fireStartDate: this.newReportItem.fireStartDate,
-      fireEndDate: this.newReportItem.fireEndDate,
+      fireStartDate: this.fireStartDateControl.value.toISOString(),
+      fireEndDate: this.fireEndDateControl.value.toISOString(),
       reportDate: new Date().toISOString(),
     }
 
