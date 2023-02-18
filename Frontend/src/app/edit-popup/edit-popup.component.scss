@@ -1,0 +1,39 @@
+.window {
+  width: 740px;
+  height: 500px;
+  border-radius: 8px, !important;
+  overflow: auto;
+}
+
+.action-button {
+  padding-bottom: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 16px;
+}
+
+.report-aggregate-details {
+  display: flex;
+}
+
+.add-report {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.report-list {
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.column {
+  flex: 50%;
+}

@@ -15,11 +15,11 @@ namespace Infrastructure.Validators
 
             RuleFor(x => x.name)
                 .NotNull()
-                .Length(0, 20);
+                .Length(1, 30);
 
             RuleFor(x => x.county)
                 .NotNull()
-                .Length(0, 20);
+                .Length(1, 30);
 
             RuleFor(x => x.maxFireIndex)
                 .NotNull()

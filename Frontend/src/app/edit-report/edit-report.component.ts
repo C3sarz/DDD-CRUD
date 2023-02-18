@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ReportItem } from '../reports/report';
-import {  FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ValidatorsService } from '../validators/validators.service';
-import { ValidationErrors } from 'fluentvalidation-ts/dist/ValidationErrors';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -14,35 +13,32 @@ export class EditReportComponent {
 
   @Input() reportItem!: ReportItem;
   @Input() reportIndex!: number;
-  @Input() deleteCallback!: (index:number) => void;
+  @Input() deleteCallback!: (index: number) => void;
   protected isEditing: boolean = false;
   protected newReportItem!: ReportItem;
-  protected validationResult!: ValidationErrors<ReportItem>;
   pipe = new DatePipe('en-US');
 
 
   fireIndexFormControl: FormControl = new FormControl();
-  hectaresFormControl: FormControl = new  FormControl();
-  fireStartDateControl: FormControl = new  FormControl();
-  fireEndDateControl: FormControl = new  FormControl();
+  hectaresFormControl: FormControl = new FormControl();
+  fireStartDateControl: FormControl = new FormControl();
+  fireEndDateControl: FormControl = new FormControl();
 
   constructor(
     private validatorService: ValidatorsService,
   ) { }
 
-  getFormattedDate(dateString: string, format:string | undefined): string {
-    try{
-    return this.pipe.transform(dateString, format ?? 'mediumDate')!;
+  getFormattedDate(dateString: string, format: string | undefined): string {
+    try {
+      return this.pipe.transform(dateString, format ?? 'mediumDate')!;
     }
-    catch{
+    catch {
       return 'invalid date'
     }
   }
 
   ngOnInit() {
-    this.validationResult = this.validatorService.validateReportItem(this.reportItem);
-    console.log(this.validationResult);
-  } 
+  }
 
   onStartEdit() {
 
@@ -66,8 +62,8 @@ export class EditReportComponent {
     }
 
     // Validate and save
-    this.validationResult = this.validatorService.validateReportItem(this.newReportItem);
-    if (Object.keys(this.validationResult).length == 0) {
+    const validationResult = this.validatorService.validateReportItem(this.newReportItem);
+    if (Object.keys(validationResult).length == 0) {
       this.isEditing = false;
 
       // Save by reference (probably not the best way to do it, but I havent used Angular enough)
@@ -78,8 +74,8 @@ export class EditReportComponent {
       this.reportItem.fireIndex = this.newReportItem.fireIndex;
     }
     else {
-      console.log(this.newReportItem);
-      console.warn(this.validationResult);
+      this.validatorService.showReportItemErrors(validationResult);
+      console.warn(validationResult);
     }
   }
 

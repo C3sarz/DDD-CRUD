@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ReportAggregate } from 'src/app/reports/report'
 import { ReportService } from 'src/app/reports/report.service'
-import { ReportPopupComponent } from '../report-popup/report-popup.component';
+import { EditPopupComponent } from '../edit-popup/edit-popup.component';
+import { NewAggregatePopupComponent } from '../new-aggregate-popup/new-aggregate-popup.component';
 
 
 @Component({
@@ -19,25 +20,35 @@ export class ReportTableComponent implements OnInit {
   constructor(private reportService: ReportService, public dialog: MatDialog) { }
 
 
-  getReports(): void {
+  getReportAggregates(): void {
     this.reportService.getReports().subscribe(result => {
       this.dataSource = result;
     });
   }
 
-  openDialog(row:ReportAggregate): void {
-    const dialogRef = this.dialog.open(ReportPopupComponent, {
+  newReport(): void {
+    this.openCreateDialog(new ReportAggregate());
+  }
+
+  openCreateDialog(row: ReportAggregate): void {
+    const dialogRef = this.dialog.open(NewAggregatePopupComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getReportAggregates();
+    });
+  }
+
+  openEditDialog(row: ReportAggregate): void {
+    const dialogRef = this.dialog.open(EditPopupComponent, {
       data: row,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getReports();
+      this.getReportAggregates();
     });
   }
 
-
-
   ngOnInit(): void {
-    this.getReports();
+    this.getReportAggregates();
   }
 }

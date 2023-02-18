@@ -1,0 +1,63 @@
+<div mat-dialog-content class="window">
+  <h1 mat-dialog-title>New Reporting Location</h1>
+
+  <p>Please complete the details of the location affected by forest fires.</p>
+  <div class="row">
+    <div class="column">
+
+
+      <div class="report-aggregate-details">
+        <!-- Location Name Form -->
+        <mat-form-field>
+          <mat-label>Location Name:</mat-label>
+          <input [formControl]="nameControl" matInput #input maxlength="30" placeholder="Ex. My Farm">
+        </mat-form-field>
+      </div>
+
+      <div class="report-aggregate-details">
+        <!-- County Form -->
+        <mat-form-field>
+          <mat-label>Location County:</mat-label>
+          <input [formControl]="countyControl" matInput #input maxlength="30" placeholder="Ex. Morris County">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="column">
+
+      <div class="report-aggregate-details">
+        <!-- AVGFireIndex Form -->
+        <mat-form-field>
+          <mat-label>Average Fire Index: </mat-label>
+          <input [formControl]="avgFireIndex" matInput #input maxlength="3" placeholder="Ex. 15">
+        </mat-form-field>
+      </div>
+
+      <div class="report-aggregate-details">
+
+        <!-- MAXFireIndex Form -->
+        <mat-form-field>
+          <mat-label>Maximum Fire Index: </mat-label>
+          <input [formControl]="maxFireIndex" matInput #input maxlength="3" placeholder="Ex. 20">
+
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <h2>Reports:</h2>
+  <h3 *ngIf="reportAggregate.reportList.length == 0">No forest fires reported on this location.</h3>
+  <div class="report-container" *ngFor="let r of reportAggregate.reportList; index as i">
+    <app-edit-report [reportItem]="r" [reportIndex]="i" [deleteCallback]="deleteReportCallback"></app-edit-report>
+  </div>
+  <div class="add-report">
+    <button mat-fab color="basic" (click)="createNewReport()">
+      <mat-icon fontIcon="add"></mat-icon>
+
+    </button>
+  </div>
+
+</div>
+<div mat-dialog-actions align="end" class="action-button">
+  <button mat-fab color="primary" aria-label="Edit" (click)="onSaveClicked()">
+    <mat-icon fontIcon="save"></mat-icon>
+  </button>
+</div>

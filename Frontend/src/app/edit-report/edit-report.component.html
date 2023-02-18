@@ -19,7 +19,7 @@
       <div class="column">
         <mat-form-field appearance="fill">
           <mat-label>Fire Start Date</mat-label>
-          <input matInput [formControl]="fireStartDateControl" [matDatepicker]="fireStartDatePicker">
+          <input matInput readonly [formControl]="fireStartDateControl" [matDatepicker]="fireStartDatePicker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="fireStartDatePicker"></mat-datepicker-toggle>
           <mat-datepicker #fireStartDatePicker></mat-datepicker>
@@ -31,9 +31,6 @@
         <mat-form-field hintLabel="Enter the number of burned hectares." appearance="fill">
           <mat-label>Burned hectares</mat-label>
           <input [formControl]="hectaresFormControl" matInput #input maxlength="10" placeholder="Ex. 100">
-          <mat-error *ngIf="validationResult.hectares != undefined">
-            Burned hectares are <strong>required</strong>.
-          </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -43,7 +40,7 @@
       <div class="column">
         <mat-form-field appearance="fill">
           <mat-label>Fire End Date</mat-label>
-          <input matInput [formControl]="fireEndDateControl" [matDatepicker]="fireEndDatePicker">
+          <input matInput readonly [formControl]="fireEndDateControl" [matDatepicker]="fireEndDatePicker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="fireEndDatePicker"></mat-datepicker-toggle>
           <mat-datepicker #fireEndDatePicker></mat-datepicker>
@@ -56,9 +53,6 @@
         <mat-form-field hintLabel="Enter the fire index at the time of the fire." appearance="fill">
           <mat-label>Fire Index</mat-label>
           <input [formControl]="fireIndexFormControl" matInput #input maxlength="3" placeholder="Ex. 20">
-          <mat-error *ngIf="validationResult.fireIndex != undefined">
-            FWI value is <strong>required</strong>.
-          </mat-error>
         </mat-form-field>
       </div>
     </div>

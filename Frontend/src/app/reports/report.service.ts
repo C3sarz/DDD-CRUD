@@ -28,7 +28,7 @@ export class ReportService {
     // Client-side HTTP error.
     if (error.status === 0) {
       console.error('An error occurred:', error.error);
-    } 
+    }
     // Server-side error
     else {
       console.error(

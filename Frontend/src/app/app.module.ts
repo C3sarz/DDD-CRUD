@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReportTableComponent } from './report-table/report-table.component';
 import { EditReportComponent } from './edit-report/edit-report.component';
-import { ReportPopupComponent } from './report-popup/report-popup.component';
+import { EditPopupComponent } from './edit-popup/edit-popup.component';
 
 
 // Material Components
@@ -23,6 +23,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NewAggregatePopupComponent } from './new-aggregate-popup/new-aggregate-popup.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -32,7 +34,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppComponent,
     ReportTableComponent,
     EditReportComponent,
-    ReportPopupComponent,
+    EditPopupComponent,
+    NewAggregatePopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatGridListModule,
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

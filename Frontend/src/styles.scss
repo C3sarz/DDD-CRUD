@@ -2,3 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.snackbar {
+    background: red;
+    color: white;
+    vertical-align:top;
+    align-content: center;
+    white-space: pre-wrap;
+}
