@@ -14,7 +14,6 @@ namespace Domain.Entities
         public string fireStartDate { get;  set; }
         public string fireEndDate { get;  set; }
         public string reportDate { get;  set; }
-
         public int fireIndex { get;  set; }
         public int hectares { get;  set; }
 

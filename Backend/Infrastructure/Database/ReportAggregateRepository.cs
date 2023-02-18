@@ -18,7 +18,7 @@ namespace Infrastructure.Database
             _database = database;
             _collection = _database.GetCollection<ReportAggregate>("Reports");
         }
-        public int Add(ReportAggregate entity) => _collection.Insert(entity);
+        public int Insert(ReportAggregate entity) => _collection.Insert(entity);
 
         public bool Delete(int id) => _collection.Delete(id);
 
@@ -29,6 +29,8 @@ namespace Infrastructure.Database
         public ReportAggregate GetById(int id) => _collection.FindById(id);
 
         public bool Update(ReportAggregate entity) => _collection.Update(entity);
+
+        public bool Upsert(ReportAggregate entity) => _collection.Upsert(entity);
 
         /// <summary>
         /// No need to implement since LiteDB does not have a dispose method.

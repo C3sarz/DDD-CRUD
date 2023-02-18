@@ -56,7 +56,7 @@ namespace API
         {
 
             int avgIndex = RandomNumberGenerator.GetInt32(20);
-            repository.Add(
+            repository.Insert(
                 new ReportAggregate(
                     "Cesar's Farm",
                     "Johnson County",
@@ -66,7 +66,7 @@ namespace API
                 ));
 
             avgIndex = RandomNumberGenerator.GetInt32(20);
-            repository.Add(
+            repository.Insert(
                 new ReportAggregate(
                     "Green Forest",
                     "Morris County",
@@ -76,7 +76,7 @@ namespace API
                 ));
 
             avgIndex = RandomNumberGenerator.GetInt32(20);
-            repository.Add(
+            repository.Insert(
                 new ReportAggregate(
                     "Lawrence",
                     "Leavenworth County",
@@ -86,7 +86,7 @@ namespace API
                 ));
 
             avgIndex = RandomNumberGenerator.GetInt32(20);
-            repository.Add(
+            repository.Insert(
                 new ReportAggregate(
                     "River Trail",
                     "Riley County",

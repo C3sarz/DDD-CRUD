@@ -91,8 +91,11 @@ namespace API.Controllers
         {
             try
             {
-                _reportService.DeleteReport(id);
-                return StatusCode(StatusCodes.Status200OK);
+                if (_reportService.DeleteReport(id))
+                {
+                    return StatusCode(StatusCodes.Status200OK);
+                }
+                return NotFound();
             }
             catch
             {

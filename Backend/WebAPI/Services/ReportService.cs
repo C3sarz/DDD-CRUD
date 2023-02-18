@@ -22,19 +22,19 @@ namespace API.Services
         public void CreateReport(ReportAggregate report)
         {
             _validator.ValidateAndThrow(report);
-            _repository.Add(report);
+            _repository.Insert(report);
         }
 
-        public void DeleteReport(int id) => _repository.Delete(id);
+        public bool DeleteReport(int id) => _repository.Delete(id);
 
         public IEnumerable<ReportAggregate> GetAllReports() => _repository.GetAll();
 
         public ReportAggregate GetReport(int Id) => _repository.GetById(Id);
 
-        public void UpdateReport(ReportAggregate report)
+        public bool UpdateReport(ReportAggregate report)
         {
             _validator.ValidateAndThrow(report);
-            _repository.Update(report);
+           return  _repository.Upsert(report);
         }
     }
 }
