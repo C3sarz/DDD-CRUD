@@ -20,8 +20,8 @@ export class ReportTableComponent implements OnInit {
 
 
   getReports(): void {
-    this.reportService.getReports().subscribe(dataSource => {
-      this.dataSource = dataSource
+    this.reportService.getReports().subscribe(result => {
+      this.dataSource = result;
     });
   }
 
@@ -31,7 +31,6 @@ export class ReportTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed: '+result);
       this.getReports();
     });
   }

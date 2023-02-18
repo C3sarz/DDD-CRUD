@@ -69,7 +69,7 @@
   <img width="40" alt="Forest Fire Icon" src="/assets/main-icon.png" />
   <span>Forest Fire Reporting Platform (FFRP)</span>
   <div class="spacer"></div>
-  <button mat-icon-button color="basic" aria-label="Reload table">
+  <button mat-icon-button color="basic" aria-label="Reload table" (click)="refresh()">
     <mat-icon>replay</mat-icon>
   </button>
   <a href="https://github.com/C3sarz/DDD-CRUD" target="_blank"><img id="github-logo" alt="Forest Fire Icon"
@@ -88,10 +88,10 @@
 
 
 
-  <!-- Footer -->
-  <footer>
-    Icons by: -<a target="_blank" href="https://icons8.com">Icons8</a>
-  </footer>
+ 
 </body>
-
+ <!-- Footer -->
+ <footer>
+  Icons by: -<a target="_blank" href="https://icons8.com">Icons8</a>
+</footer>
 <router-outlet></router-outlet>

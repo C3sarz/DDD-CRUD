@@ -3,7 +3,6 @@ import { ReportItem } from '../reports/report';
 import {  FormControl } from '@angular/forms';
 import { ValidatorsService } from '../validators/validators.service';
 import { ValidationErrors } from 'fluentvalidation-ts/dist/ValidationErrors';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { DatePipe } from '@angular/common';
 
 @Component({

@@ -21,10 +21,10 @@
 </div>
 <div mat-dialog-actions align="end" class="action-button">
 
-  <button mat-fab color="warn" aria-label="Delete" [mat-dialog-close]="onDeleteClicked">
+  <button mat-fab color="warn" aria-label="Delete" (click)="onDeleteClicked()">
     <mat-icon fontIcon="delete"></mat-icon>
   </button>
-  <button mat-fab color="primary" aria-label="Edit" [mat-dialog-close]="onEditClicked">
+  <button mat-fab color="primary" aria-label="Edit" (click)="onEditClicked()">
     <mat-icon fontIcon="save"></mat-icon>
   </button>
 </div>

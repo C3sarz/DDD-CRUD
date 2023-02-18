@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Forest Fire Reports';
+
+  refresh(): void {
+    window.location.reload();
+}
 }

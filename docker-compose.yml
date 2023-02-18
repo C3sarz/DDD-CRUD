@@ -7,9 +7,21 @@ services:
           dockerfile: Dockerfile
         ports:
           - "5000:80"
+        healthcheck:
+          test: ["CMD", "curl", "-f", "http://localhost:80/api/Report"]
+          interval: 10s
+          timeout: 10s
+          retries: 3
+          start_period: 10s
     frontend:
         build:
           context: ./Frontend
           dockerfile: Dockerfile
         ports:
           - "4200:4200"
+        healthcheck:
+          test: ["CMD", "curl", "-f", "http://localhost:4200"]
+          interval: 10s
+          timeout: 10s
+          retries: 3
+          start_period: 10s

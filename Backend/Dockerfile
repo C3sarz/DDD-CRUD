@@ -20,4 +20,5 @@ RUN dotnet publish "API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN apt update && apt install -y curl
 ENTRYPOINT ["dotnet", "API.dll"]

@@ -1,6 +1,3 @@
-
-
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 report-table">
   
     <!-- ID Column -->
@@ -11,7 +8,7 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>Location Name</th>
       <td mat-cell *matCellDef="let element">{{element.name}}</td>
     </ng-container>
   
@@ -23,7 +20,7 @@
 
     <!-- AVGFireIndex Column -->
     <ng-container matColumnDef="avgFireIndex">
-      <th mat-header-cell *matHeaderCellDef>Max FWI</th>
+      <th mat-header-cell *matHeaderCellDef>Avg FWI</th>
       <td mat-cell *matCellDef="let element">{{element.avgFireIndex}}</td>
     </ng-container>
 

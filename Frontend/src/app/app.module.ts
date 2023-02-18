@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReportTableComponent } from './report-table/report-table.component';
 import { EditReportComponent } from './edit-report/edit-report.component';
-import { ViewReportComponent } from './view-report/view-report.component';
 import { ReportPopupComponent } from './report-popup/report-popup.component';
 
 
@@ -22,7 +21,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { ReportContainerComponent } from './report-container/report-container.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatNativeDateModule } from '@angular/material/core';
 
@@ -34,9 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppComponent,
     ReportTableComponent,
     EditReportComponent,
-    ViewReportComponent,
     ReportPopupComponent,
-    ReportContainerComponent,
   ],
   imports: [
     BrowserModule,
