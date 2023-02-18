@@ -7,7 +7,7 @@ Basic CRUD Frontend and Backend, developed as an interview task for Hahn Softwar
 **__In order to run the example, please type ```docker compose up --build``` in the root directory of the repository (```/DDD-CRUD```).__**
 **__Please then navigate to [Angular application](http://localhost:4200/) (```http://localhost:4200```) to access the Angular Front-end application.__**
 
-## Requirements
+## Task
 
 1. Develop a WebApi based on a DDD Pattern in .Net6
 2. Develop a Angular CRUD Application to maintain the data with validation in front and backend ( use FluentValidation Syntax in Both)
