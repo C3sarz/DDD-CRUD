@@ -7,6 +7,8 @@ Basic CRUD Frontend and Backend, developed as an interview task for Hahn Softwar
 **__In order to run the example, please type ```docker compose up --build``` in the root directory of the repository (```/DDD-CRUD```).__**
 **__Please then navigate to [Angular application](http://localhost:4200/) (```http://localhost:4200```) to access the Angular Front-end application.__**
 
+To recreate the image with the testing values in the database, please use ```docker compose up --force-recreate```.
+
 ## Task
 
 1. Develop a WebApi based on a DDD Pattern in .Net6
