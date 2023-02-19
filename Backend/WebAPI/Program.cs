@@ -55,44 +55,66 @@ namespace API
         private static void populateDatabase(IRepository<ReportAggregate> repository)
         {
 
-            int avgIndex = RandomNumberGenerator.GetInt32(20);
             repository.Insert(
                 new ReportAggregate(
                     "Cesar's Farm",
                     "Johnson County",
-                    avgIndex,
-                    avgIndex + RandomNumberGenerator.GetInt32(6),
-                    new List<ReportItem>()
+                    14,
+                    26,
+                    new List<ReportItem>(){
+                    new ReportItem("2023-02-18T23:11:01.365Z",
+                    "2022-11-10T03:00:00.000Z",
+                    "2022-11-25T03:00:00.000Z",
+                    26,
+                    530
+                    )}
                 ));
 
-            avgIndex = RandomNumberGenerator.GetInt32(20);
             repository.Insert(
                 new ReportAggregate(
                     "Green Forest",
                     "Morris County",
-                    avgIndex,
-                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    12,
+                    13,
                     new List<ReportItem>()
                 ));
 
-            avgIndex = RandomNumberGenerator.GetInt32(20);
             repository.Insert(
                 new ReportAggregate(
                     "Lawrence",
                     "Leavenworth County",
-                    avgIndex,
-                    avgIndex + RandomNumberGenerator.GetInt32(6),
+                    18,
+                    22 ,
                     new List<ReportItem>()
+                    {
+                    new ReportItem("2023-02-18T23:09:17.278Z",
+                    "2018-06-20T04:00:00.000Z",
+                    "2018-06-30T04:00:00.000Z",
+                    15,
+                    130
+                    ),
+                    new ReportItem("2023-02-18T23:09:49.137Z",
+                    "2022-02-09T03:00:00.000Z",
+                    "2022-11-25T03:00:00.000Z",
+                    29,
+                    630
+                    )
+                    }
                 ));
 
-            avgIndex = RandomNumberGenerator.GetInt32(20);
             repository.Insert(
                 new ReportAggregate(
                     "River Trail",
                     "Riley County",
-                    avgIndex,
-                    avgIndex + RandomNumberGenerator.GetInt32(6),
-                    new List<ReportItem>()
+                    5,
+                    20,
+                    new List<ReportItem>() {
+                    new ReportItem("2023-02-18T23:10:11.971Z",
+                    "2023-02-01T03:00:00.000Z",
+                    "2023-02-09T03:00:00.000Z",
+                    20,
+                    30
+                    )}
                 ));
 
         }
